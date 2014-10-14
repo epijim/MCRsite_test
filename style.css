@@ -957,3 +957,9 @@ body {
 	font-family: arial;
 }
 
+/* Hide if on mobile */
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .mobile-hide{ display: none; }
+}
+
