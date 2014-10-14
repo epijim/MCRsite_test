@@ -930,7 +930,7 @@ body {
 .monthViewCell {
 	width: 130px;
 	height: 110px;
-	border: solid gray 1px;
+	border: solid #ed0909 1px;
 	text-align: left;
 }
 
@@ -945,14 +945,14 @@ body {
 	padding: 0px;
 	font-size: 10px;
 	color: white;
-	background: black;
+	background-color: #ed0909;
 	font-family: arial;
 }
 
 .eventMouseOut {
 	padding: 0px;
 	font-size: 10px;
-	color: blue;
+	color: grey;
 	background: white;
 	font-family: arial;
 }
