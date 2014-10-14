@@ -880,6 +880,7 @@ body {
 
 #navControlDiv input {
 	border: solid black 1px;
+	background-color: #ed0909;
 	font-style: georgia;
 	font-size: 12px;
 }
@@ -892,6 +893,7 @@ body {
 
 #viewControlDiv input {
 	border: solid black 1px;
+	background-color: #ed0909;
 	font-style: georgia;
 	font-size: 12px;
 }
