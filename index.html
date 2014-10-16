@@ -286,7 +286,7 @@
                 // Render the event
                 jQuery("#gcal-events li").last().before(
                     "<strong>" + event_title + "</strong><br />"
-                    + event_start_str + event_loc+"<br />"
+                    +"<em>"+ event_start_str + event_loc+ "</em>"+"<br />"
                 );
             });
         });
@@ -295,9 +295,9 @@
 
         <div class="container">
           <div align="center">
-            <h5>Below is a list of upcoming events.</h5>
+            <h5>Below is a list of upcoming events</h5>
               <div class="mobile-hide">
-              <h5>You can also see the <a class="page-scroll" href="#calendar_popup">full calendar by clicking here</a>.</h5>
+              <h5>You can also see the <a class="page-scroll" href="#calendar_popup">full calendar by clicking here</a></h5>
             </div> <!-- mobile hide the full calendar link -->
               <ul id="gcal-events">
                 <li>No events listed</li>
@@ -314,7 +314,8 @@
         </div>
     </section>
 
-    <!-- WIP : https://developers.google.com/gdata/articles/calvis?csw=1 -->
+    <div class="mobile-hide">
+      <!-- WIP : https://developers.google.com/gdata/articles/calvis?csw=1 -->
 <!-- Get java and css-->
 <script src="//gcal.appspot.com/calvis/calvis.js" type="text/javascript"></script>
 
@@ -367,7 +368,6 @@ function displayEvent(event) {
 }
 </script>
 <!-- Calendar Section -->
-<div class="mobile-hide">
     <section id="calendar_popup">
         <div class="container">
           <div align="center">
@@ -400,8 +400,8 @@ function displayEvent(event) {
             </div>
         </div>
     </section>
-</div> <!-- mobile hide -->
 
+    </div> <!-- mobile hide -->
     <!-- Freshers Section -->
     <section id="timeline">
         <div class="container">
@@ -722,7 +722,7 @@ function displayEvent(event) {
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Use the form below to contact the MCR.</h3>
                 </div>
             </div>
             <div class="row">
@@ -760,6 +760,7 @@ function displayEvent(event) {
             </div>
         </div>
     </section>
+
     <!-- About Section -->
     <section id="documents">
         <div class="container">
@@ -793,15 +794,16 @@ function displayEvent(event) {
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
+                        <li><a href="/MCRsite_test/mcrwiki">Check out the wiki</a>
                         </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li><a href="https://github.com/epijim/JesusMCRsite">Site code base</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
      <!--  Modals -->
  
     <div class="services-modal modal fade" id="servicesModal6" tabindex="-1" role="dialog" aria-hidden="true">
@@ -882,7 +884,21 @@ The Graduate Union and the Cambridge University Students’ Union also provide W
                             <h2>GradCon / 3MT</h2>
                             <hr class="star-primary">
                             <img src="img/services/academic_400_289.gif" class="img-responsive img-centered" alt="image-alt">
-                            <p>
+                            <p><h3 id="graduate-symposiums">Graduate symposiums</h3>
+
+<p>Several times a term Jesus College fellows speak after graduate hall. Check out the
+ calendar to see when the next talk is.</p>
+
+<h3 id="minute-thesis">3 minute thesis</h3>
+
+<p>Could you describe your research to a lay in 3 minutes? The three minute thesis
+ competition is a chance to practice the skills needed to get your research noticed.
+ <a href="/MCRsite_test/academic/" target="_blank">Talks from previous competitions are online</a></p>
+
+<h3 id="the-graduate-conference">The graduate conference</h3>
+
+<p>The graduate conference is a chance for grads to showcase their work to an interdisciplinary
+ group. <a href="/MCRsite_test/academic/" target="_blank">Talks from previous conferences are online</a></p>
 </p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -907,7 +923,39 @@ The Graduate Union and the Cambridge University Students’ Union also provide W
                             <h2>Formals and swaps</h2>
                             <hr class="star-primary">
                             <img src="img/services/superhall_400_289.png" class="img-responsive img-centered" alt="image-alt">
-                            <p>
+                            <p><h3 id="caff-dinners">Caff dinners</h3>
+
+<p>The ‘caff’ (cafeteria) is where you can get a cheap and nutritious meal day to day. If you are missing those traditional Sunday Roasts come along to the Carvery, available every Sunday during Term. The caff provides three meals a day – Breakfast from 8.00 to 9.00am (not at the weekend), Lunch from 12.15 to 1.45 pm (12.00 to 1.30 pm at the weekend) and Dinner from 5.45 to 6.45 pm.
+The grads usually turn out in numbers on a Saturday, when the college puts on a great brunch from 11am to 1.30pm
+If you’re after informal fare, the bar also does pizza.</p>
+
+<h3 id="formal-hall-main-hall">Formal hall (main hall)</h3>
+
+<p>Dinner starts every night, except Monday and Saturday, at 7.30pm, and is three courses.
+ The dress code is gowns for Jesuans, and smart for guests.</p>
+
+<h3 id="grad-hall">Grad hall</h3>
+
+<p>A four course dinner is served at 7.30pm each Wednesday in the Upper Hall.
+ Before dinner, pre-drinks are served in the grad room from 7.00pm.
+ The dress is smart casual, and gowns are not worn.</p>
+
+<h3 id="high-table">High table</h3>
+
+<p>A four to five course dinner is served at 7.30pm in Hall on Tuesday’s during term.
+ Wine from the college cellars is included in the price. Pre-drinks are served in
+ the combination room from 7.00pm. To get there, go through the big wooden doors
+ beside the old stone carved section of the cloisters (looking through the carved
+   section you can see the downstairs room of where you are going). The drinks
+   themselves are served up the big wooden staircase. Dress is smart with gowns</p>
+
+<h3 id="superhalls">Superhalls</h3>
+
+<p>Several times a year the graduate community comes together for a super hall. These
+ events are themed feasts, followed by a bop. Dates for the superhalls are on the
+ MCR calendar.</p>
+
+<p><strong>For more info meals in college, <a href="http://mcr.jesus.cam.ac.uk/mcrwiki/index.php?title=Main_Page" target="_blank">check out the wiki (Raven login required)</a></strong></p>
 </p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>

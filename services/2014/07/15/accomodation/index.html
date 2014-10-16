@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Book an event/punt</title>
+    <title>Accommodation</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Jesus College MCR (Graduate Society), University of Cambridge.">
-    <link rel="canonical" href="http://epijim.uk/MCRsite_test/services/2014/07/14/project-5/">
+    <link rel="canonical" href="http://epijim.uk/MCRsite_test/services/2014/07/15/accomodation/">
 
 
     <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
@@ -286,7 +286,7 @@
                 // Render the event
                 jQuery("#gcal-events li").last().before(
                     "<strong>" + event_title + "</strong><br />"
-                    + event_start_str + event_loc+"<br />"
+                    +"<em>"+ event_start_str + event_loc+ "</em>"+"<br />"
                 );
             });
         });
@@ -295,9 +295,9 @@
 
         <div class="container">
           <div align="center">
-            <h5>Below is a list of upcoming events.</h5>
+            <h5>Below is a list of upcoming events</h5>
               <div class="mobile-hide">
-              <h5>You can also see the <a class="page-scroll" href="#calendar_popup">full calendar by clicking here</a>.</h5>
+              <h5>You can also see the <a class="page-scroll" href="#calendar_popup">full calendar by clicking here</a></h5>
             </div> <!-- mobile hide the full calendar link -->
               <ul id="gcal-events">
                 <li>No events listed</li>
@@ -314,7 +314,8 @@
         </div>
     </section>
 
-    <!-- WIP : https://developers.google.com/gdata/articles/calvis?csw=1 -->
+    <div class="mobile-hide">
+      <!-- WIP : https://developers.google.com/gdata/articles/calvis?csw=1 -->
 <!-- Get java and css-->
 <script src="//gcal.appspot.com/calvis/calvis.js" type="text/javascript"></script>
 
@@ -367,7 +368,6 @@ function displayEvent(event) {
 }
 </script>
 <!-- Calendar Section -->
-<div class="mobile-hide">
     <section id="calendar_popup">
         <div class="container">
           <div align="center">
@@ -400,8 +400,8 @@ function displayEvent(event) {
             </div>
         </div>
     </section>
-</div> <!-- mobile hide -->
 
+    </div> <!-- mobile hide -->
     <!-- Freshers Section -->
     <section id="timeline">
         <div class="container">
@@ -722,7 +722,7 @@ function displayEvent(event) {
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Use the form below to contact the MCR.</h3>
                 </div>
             </div>
             <div class="row">
@@ -760,6 +760,7 @@ function displayEvent(event) {
             </div>
         </div>
     </section>
+
     <!-- About Section -->
     <section id="documents">
         <div class="container">
@@ -793,15 +794,16 @@ function displayEvent(event) {
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
+                        <li><a href="/MCRsite_test/mcrwiki">Check out the wiki</a>
                         </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li><a href="https://github.com/epijim/JesusMCRsite">Site code base</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
      <!--  Modals -->
  
     <div class="services-modal modal fade" id="servicesModal6" tabindex="-1" role="dialog" aria-hidden="true">
@@ -882,7 +884,22 @@ The Graduate Union and the Cambridge University Students’ Union also provide W
                             <h2>GradCon / 3MT</h2>
                             <hr class="star-primary">
                             <img src="img/services/academic_400_289.gif" class="img-responsive img-centered" alt="image-alt">
-                            <p></p>
+                            <p>### Graduate symposiums
+
+Several times a term Jesus College fellows speak after graduate hall. Check out the
+ calendar to see when the next talk is.
+
+### 3 minute thesis
+
+Could you describe your research to a lay in 3 minutes? The three minute thesis
+ competition is a chance to practice the skills needed to get your research noticed.
+ <a href="{{site.baseurl}}/academic/" target="_blank">Talks from previous competitions are online</a>
+
+### The graduate conference
+
+The graduate conference is a chance for grads to showcase their work to an interdisciplinary
+ group. <a href="{{site.baseurl}}/academic/" target="_blank">Talks from previous conferences are online</a>
+</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -906,7 +923,40 @@ The Graduate Union and the Cambridge University Students’ Union also provide W
                             <h2>Formals and swaps</h2>
                             <hr class="star-primary">
                             <img src="img/services/superhall_400_289.png" class="img-responsive img-centered" alt="image-alt">
-                            <p></p>
+                            <p>### Caff dinners
+
+The ‘caff’ (cafeteria) is where you can get a cheap and nutritious meal day to day. If you are missing those traditional Sunday Roasts come along to the Carvery, available every Sunday during Term. The caff provides three meals a day – Breakfast from 8.00 to 9.00am (not at the weekend), Lunch from 12.15 to 1.45 pm (12.00 to 1.30 pm at the weekend) and Dinner from 5.45 to 6.45 pm.
+The grads usually turn out in numbers on a Saturday, when the college puts on a great brunch from 11am to 1.30pm
+If you’re after informal fare, the bar also does pizza.
+
+### Formal hall (main hall)
+
+Dinner starts every night, except Monday and Saturday, at 7.30pm, and is three courses.
+ The dress code is gowns for Jesuans, and smart for guests.
+
+### Grad hall
+
+A four course dinner is served at 7.30pm each Wednesday in the Upper Hall.
+ Before dinner, pre-drinks are served in the grad room from 7.00pm.
+ The dress is smart casual, and gowns are not worn.
+
+### High table
+
+A four to five course dinner is served at 7.30pm in Hall on Tuesday’s during term.
+ Wine from the college cellars is included in the price. Pre-drinks are served in
+ the combination room from 7.00pm. To get there, go through the big wooden doors
+ beside the old stone carved section of the cloisters (looking through the carved
+   section you can see the downstairs room of where you are going). The drinks
+   themselves are served up the big wooden staircase. Dress is smart with gowns
+
+### Superhalls
+
+Several times a year the graduate community comes together for a super hall. These
+ events are themed feasts, followed by a bop. Dates for the superhalls are on the
+ MCR calendar.
+
+**For more info meals in college, <a href="http://mcr.jesus.cam.ac.uk/mcrwiki/index.php?title=Main_Page" target="_blank">check out the wiki (Raven login required)</a>**
+</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -930,20 +980,20 @@ The Graduate Union and the Cambridge University Students’ Union also provide W
                             <h2>Accommodation</h2>
                             <hr class="star-primary">
                             <img src="img/services/housing_400_289.jpg" class="img-responsive img-centered" alt="image-alt">
-                            <p>Jesus College has a wide range of accommodation available to grads. In fact,
+                            <p><p>Jesus College has a wide range of accommodation available to grads. In fact,
  we are lucky enough to be one of the few colleges that can offer the financial
  and social benefits of living in college for up to three years of a PhD.
  Accommodation at Jesus is priced at a very good rate by Cambridge standards
  and well maintained, not to mention the fact that most of our graduates live
  within 5 minutes walk of both the City Centre and our Grad Room is a great
- boost to fostering a sense of community.
+ boost to fostering a sense of community.</p>
 
-Your room in first year will be assigned, but in later years grads are able to
+<p>Your room in first year will be assigned, but in later years grads are able to
  choose their accommodation based on personal preferences.  Each grad has up to
  three years eligibility for graduate accommodation (including your Masters year),
- but more can be offered if rooms are available.
+ but more can be offered if rooms are available.</p>
 
-All rooms and partner accommodation have internet connections (included in rents
+<p>All rooms and partner accommodation have internet connections (included in rents
  charged is unlimited wireless internet, via Edurom in all college housing, and
  50GB per month of incredibly fast wired internet). Utilities are charged in
  addition to the rent at a very competitive fixed rate. The Housekeeping
@@ -952,13 +1002,13 @@ All rooms and partner accommodation have internet connections (included in rents
    washing-up and cleaning of cooking utensils. In addition, all accommodation
    has laundry facilities within each building, or less than a minutes walk away.
    While the college provides beds and standard furniture like desks and chairs,
-   it does not supply bedding or cooking equipment.
+   it does not supply bedding or cooking equipment.</p>
 
-Jesus Lane, Malcolm Street, Park Street and Lower Park Street are the roads that
+<p>Jesus Lane, Malcolm Street, Park Street and Lower Park Street are the roads that
  border the college. The majority of the buildings on these streets are owned by
  Jesus College. While some blocks are undergraduate only (including all the housing within
    the college gates), the grad housing can be broadly broken down into the
-   seven areas described below.
+   seven areas described below.</p>
 
 <p><img alt="" src="img/services/map-for-website.png" usemap="#imap_70" width="620" border="0" /></p>
 <map id="imap_70" name="imap_70">
@@ -972,67 +1022,67 @@ Jesus Lane, Malcolm Street, Park Street and Lower Park Street are the roads that
 <area title="Maid's Causeway is just to the right" alt="Maid's Causeway is just to the right" coords="556,232,618,412" shape="rect" />
 <area title="Jesus College" alt="Jesus College" coords="274,11,596,187" shape="rect" /> </map>
 
-## Jesus Lane
+<h2 id="jesus-lane">Jesus Lane</h2>
 
-![Little Trinity]({{ site.url }}{{site.baseurl}}/img/services/housing_jesuslane.jpg)
+<p><img src="http://epijim.uk/MCRsite_test/img/services/housing_jesuslane.jpg" alt="Little Trinity" /></p>
 
-Jesus Lane is the road that the main entrance to Jesus College (called the ‘Chimney’) comes off.
+<p>Jesus Lane is the road that the main entrance to Jesus College (called the ‘Chimney’) comes off.
  One side of the street is college housing; the other side is the College itself. The grad accommodation
  is clustered at either end of this road, with undergraduates in-between. The houses here tend to be two
  to three storeys, with large fenced gardens behind, and kitchens in the basement. A notable house on this street
- is number 49. It houses a large number of graduates and has a very large kitchen ideal for socialising.
+ is number 49. It houses a large number of graduates and has a very large kitchen ideal for socialising.</p>
 
-## Little Trinity (16 Jesus Lane)
+<h2 id="little-trinity-16-jesus-lane">Little Trinity (16 Jesus Lane)</h2>
 
-![Little Trinity]({{ site.url }}{{site.baseurl}}/img/services/housing_400_289.jpg)
+<p><img src="http://epijim.uk/MCRsite_test/img/services/housing_400_289.jpg" alt="Little Trinity" /></p>
 
-This grand old house sits at the end of Jesus Lane, directly opposite the ADC Theatre.
+<p>This grand old house sits at the end of Jesus Lane, directly opposite the ADC Theatre.
  Built in 1725, it has a great wooden staircase and several rooms still contain their wooden
  panelling and almost every room comes with its own quirky character. Despite its grandiose
  design, and the often strong community in the house, the building has small kitchens which
- can limit the social atmosphere.  The Annexe, a graduate couples unit, is also at this address.
+ can limit the social atmosphere.  The Annexe, a graduate couples unit, is also at this address.</p>
 
-## Park St
+<h2 id="park-st">Park St</h2>
 
-![Little Trinity]({{ site.url }}{{site.baseurl}}/img/services/housing_park.jpg)
+<p><img src="http://epijim.uk/MCRsite_test/img/services/housing_park.jpg" alt="Little Trinity" /></p>
 
-Park Street has central Cambridge on one side, and the college grounds on the other.
+<p>Park Street has central Cambridge on one side, and the college grounds on the other.
  The buildings are similar to, although a little smaller than the ones on Jesus Lane.
  As the houses on this street back on to the College’s lacrosse/hockey pitch, residents
- there also enjoy being 30 seconds walk from the College gym and squash courts.
+ there also enjoy being 30 seconds walk from the College gym and squash courts.</p>
 
-## Lower Park St
+<h2 id="lower-park-st">Lower Park St</h2>
 
-![Little Trinity]({{ site.url }}{{site.baseurl}}/img/services/housing_400_289.jpg)
+<p><img src="http://epijim.uk/MCRsite_test/img/services/housing_400_289.jpg" alt="Little Trinity" /></p>
 
-The prettiest housing in college, these two storey houses back on to a college garden on one side,
+<p>The prettiest housing in college, these two storey houses back on to a college garden on one side,
  and either the Maypole Pub, a local school or Jesus Green on the other, depending on
  how far down the street you are. The houses here are small, and most have only three
- people in each house. Several couples’ units are also on this street.
+ people in each house. Several couples’ units are also on this street.</p>
 
-## Marshall Court (off Jesus Lane)
+<h2 id="marshall-court-off-jesus-lane">Marshall Court (off Jesus Lane)</h2>
 
-![Little Trinity]({{ site.url }}{{site.baseurl}}/img/services/housing_marshall.jpg)
+<p><img src="http://epijim.uk/MCRsite_test/img/services/housing_marshall.jpg" alt="Little Trinity" /></p>
 
-Marshall Court is the newest block in college, with both couples’ flats and single study bedroom.
+<p>Marshall Court is the newest block in college, with both couples’ flats and single study bedroom.
  All rooms in this block have ensuite bathrooms (decked out in Jesus themed tiles!).
  Rooms here can be small, but the fittings and views from the rooms down into Sidney Sussex
  College Master’s gardens are great. There is also large paved area for storing bikes.
- The 20 single bedrooms are spread through four staircases with communal kitchens in the basement.
+ The 20 single bedrooms are spread through four staircases with communal kitchens in the basement.</p>
 
-## Maid’s Causeway
+<h2 id="maids-causeway">Maid’s Causeway</h2>
 
-The furthest accommodation from Jesus (a full 0.3 miles or all of four minutes gentle stroll!),
+<p>The furthest accommodation from Jesus (a full 0.3 miles or all of four minutes gentle stroll!),
  a couple of grad houses are located here. While like all areas, the individual room sizes vary,
  this street is home to a few truly gargantuan rooms. These buildings are the closest to the
  boathouse, as well as the Grafton Centre and the big Tesco and Asda superstores in east Cambridge.
- Number 24 also boasts a large kitchen well suited to social dining.
+ Number 24 also boasts a large kitchen well suited to social dining.</p>
 
-## Malcolm St
+<h2 id="malcolm-st">Malcolm St</h2>
 
-Malcolm Street has the pleasure of having the college at one end of the street, and a brewery and
+<p>Malcolm Street has the pleasure of having the college at one end of the street, and a brewery and
  bar at the other. The east side of the street is mainly undergraduate, and the west, graduate.
- There are also a few couples’ units on  this street, with several having access to private gardens.
+ There are also a few couples’ units on  this street, with several having access to private gardens.</p>
 </p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
