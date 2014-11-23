@@ -27,6 +27,33 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Calendar -->
+    <link href='http://epijim.uk/MCRsite_test/js/fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href='http://epijim.uk/MCRsite_test/js/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+    
+    <style>
+
+      body {
+        margin: 40px 10px;
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+      }
+
+      #loading {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+    </style>
 </head>
 
 
@@ -57,7 +84,7 @@
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#calendar">Calendar</a>
+                        <a class="page-scroll" href="#calendar_nav">Calendar</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#timeline">Freshers'</a>
@@ -241,74 +268,15 @@
         </div>
     </section>
 
-    <div class="mobile-hide">
-      <link href='/MCRsite_test/js/fullcalendar/fullcalendar.css' rel='stylesheet' />
-<link href='/MCRsite_test/js/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
-<script src='/MCRsite_test/js/fullcalendar/lib/moment.min.js'></script>
-<script src='/MCRsite_test/js/fullcalendar/lib/jquery.min.js'></script>
-<script src='/MCRsite_test/js/fullcalendar/fullcalendar.min.js'></script>
-<script src='/MCRsite_test/js/fullcalendar/gcal.js'></script>
-<script>
-
-	$(document).ready(function() {
-
-		$('#calendar').fullCalendar({
-
-			// THIS KEY WON'T WORK IN PRODUCTION!!!
-			// To make your own Google API key, follow the directions here:
-			// http://fullcalendar.io/docs/google_calendar/
-			googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
-
-			// US Holidays
-			events: 'usa__en@holiday.calendar.google.com',
-
-			eventClick: function(event) {
-				// opens events in a popup window
-				window.open(event.url, 'gcalevent', 'width=700,height=600');
-				return false;
-			},
-
-			loading: function(bool) {
-				$('#loading').toggle(bool);
-			}
-
-		});
-
-	});
-
-</script>
-<style>
-
-	body {
-		margin: 40px 10px;
-		padding: 0;
-		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-		font-size: 14px;
-	}
-
-	#loading {
-		display: none;
-		position: absolute;
-		top: 10px;
-		right: 10px;
-	}
-
-	#calendar {
-		max-width: 900px;
-		margin: 0 auto;
-	}
-
-</style>
-</head>
-<body>
+    
+ <section id="calendar_nav">
 
 	<div id='loading'>loading...</div>
 
 	<div id='calendar'></div>
 
-</body>
+</section>
 
-    </div> <!-- mobile hide -->
     <!-- Freshers Section -->
     <section id="timeline">
         <div class="container">
@@ -1044,6 +1012,42 @@ Malcolm Street has the pleasure of having the college at one end of the street, 
 
     <!-- Custom Theme JavaScript -->
     <script src="/MCRsite_test/js/agency.js"></script>
+
+
+    <!-- Calendar -->
+    <script src="/MCRsite_test/js/fullcalendar/lib/moment.min.js"></script>
+    <script src="/MCRsite_test/js/fullcalendar/lib/jquery.min.js"></script>
+    <script src="/MCRsite_test/js/fullcalendar/fullcalendar.min.js"></script>
+    <script src="/MCRsite_test/js/fullcalendar/gcal.js"></script>
+    <script type='text/javascript'>
+
+      $(document).ready(function() {
+
+        $('#calendar').fullCalendar({
+
+          // THIS KEY WON'T WORK IN PRODUCTION!!!
+          // To make your own Google API key, follow the directions here:
+          // http://fullcalendar.io/docs/google_calendar/
+          googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+
+          // US Holidays
+          events: 'sgsu6qab7n3i7p2b2mthktmupk@group.calendar.google.com',
+
+          eventClick: function(event) {
+            // opens events in a popup window
+            window.open(event.url, 'gcalevent', 'width=700,height=600');
+            return false;
+          },
+
+          loading: function(bool) {
+            $('#loading').toggle(bool);
+          }
+
+        });
+
+      });
+
+    </script>
 
 
     </body>
