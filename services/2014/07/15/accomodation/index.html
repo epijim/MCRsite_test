@@ -268,8 +268,7 @@
         </div>
     </section>
 
-    
- <section id="calendar_nav">
+    <section id="calendar_nav">
 
 	<div id='loading'>loading...</div>
 
@@ -1001,11 +1000,6 @@ Several times a year the graduate community comes together for a super hall. The
     <!-- Bootstrap Core JavaScript -->
     <script src="/MCRsite_test/js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="/MCRsite_test/js/jquery.easing.min.js"></script>
-    <script src="/MCRsite_test/js/classie.js"></script>
-    <script src="/MCRsite_test/js/cbpAnimatedHeader.js"></script>
-
     <!-- Contact Form JavaScript -->
     <script src="/MCRsite_test/js/jqBootstrapValidation.js"></script>
     <script src="/MCRsite_test/js/contact_me.js"></script>
@@ -1013,43 +1007,46 @@ Several times a year the graduate community comes together for a super hall. The
     <!-- Custom Theme JavaScript -->
     <script src="/MCRsite_test/js/agency.js"></script>
 
+<!-- Calendar -->
+<script src="/MCRsite_test/js/fullcalendar/lib/moment.min.js"></script>
+<script src="/MCRsite_test/js/fullcalendar/fullcalendar.min.js"></script>
+<script src="/MCRsite_test/js/fullcalendar/gcal.js"></script>
+<script type='text/javascript'>
 
-    <!-- Calendar -->
-    <script src="/MCRsite_test/js/fullcalendar/lib/moment.min.js"></script>
-    <script src="/MCRsite_test/js/fullcalendar/lib/jquery.min.js"></script>
-    <script src="/MCRsite_test/js/fullcalendar/fullcalendar.min.js"></script>
-    <script src="/MCRsite_test/js/fullcalendar/gcal.js"></script>
-    <script type='text/javascript'>
+  $(document).ready(function() {
 
-      $(document).ready(function() {
+    $('#calendar').fullCalendar({
 
-        $('#calendar').fullCalendar({
+      // THIS KEY WON'T WORK IN PRODUCTION!!!
+      // To make your own Google API key, follow the directions here:
+      // http://fullcalendar.io/docs/google_calendar/
+      googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
 
-          // THIS KEY WON'T WORK IN PRODUCTION!!!
-          // To make your own Google API key, follow the directions here:
-          // http://fullcalendar.io/docs/google_calendar/
-          googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+      // US Holidays
+      events: 'sgsu6qab7n3i7p2b2mthktmupk@group.calendar.google.com',
 
-          // US Holidays
-          events: 'sgsu6qab7n3i7p2b2mthktmupk@group.calendar.google.com',
+      eventColor: '#f71111',
 
-          eventColor: '#f71111',
+      eventClick: function(event) {
+        // opens events in a popup window
+        window.open(event.url, 'gcalevent', 'width=700,height=600');
+        return false;
+      },
 
-          eventClick: function(event) {
-            // opens events in a popup window
-            window.open(event.url, 'gcalevent', 'width=700,height=600');
-            return false;
-          },
+      loading: function(bool) {
+        $('#loading').toggle(bool);
+      }
 
-          loading: function(bool) {
-            $('#loading').toggle(bool);
-          }
+    });
 
-        });
+  });
 
-      });
+</script>
 
-    </script>
+<!-- Plugin JavaScript -->
+<script src="/MCRsite_test/js/jquery.easing.min.js"></script>
+<script src="/MCRsite_test/js/classie.js"></script>
+<script src="/MCRsite_test/js/cbpAnimatedHeader.js"></script>
 
 
     </body>
