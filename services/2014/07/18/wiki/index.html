@@ -241,188 +241,72 @@
         </div>
     </section>
 
-    <!-- WIP : https://developers.google.com/gdata/articles/calvis?csw=1 -->
-
-<!-- Calendar Section list-->
-    <section id="calendar">
-            <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
-            <script type='text/javascript'>
-              function GCalEvents(gcal_json_url) {
-
-        // Get list of upcoming iCal events formatted in JSON
-        jQuery.getJSON(gcal_json_url, function(data){
-
-            // Parse and render each event
-            jQuery.each(data.feed.entry, function(i, item){
-                if(i == 0) {
-                    jQuery("#gcal-events li").first().hide();
-                };
-
-                // event title
-                var event_title = item.title.$t;
-
-                // event contents
-                var event_contents = jQuery.trim(item.content.$t);
-                // make each separate line a new list item
-                event_contents = event_contents.replace(/\n/g,"</li><li>");
-
-                // event start date/time
-                var event_start_date = new Date(item.gd$when[0].startTime);
-
-                // if event has a start time (as oppose to all day), format date with time
-                if(event_start_date.getHours() != 0 || event_start_date.getMinutes() != 0) {
-                     var curr_year = event_start_date.getFullYear();
-
-                    var curr_month = event_start_date.getMonth() + 1; //Months are zero based
-                    if (curr_month < 10)
-                        curr_month = "0" + curr_month;
-
-                    var curr_date = event_start_date.getDate();
-                    if (curr_date < 10)
-                        curr_date = "0" + curr_date;
-
-                    var curr_hour = event_start_date.getHours();
-                    if (curr_hour < 10)
-                        curr_hour = "0" + curr_hour;
-
-                    var curr_min = event_start_date.getMinutes();
-                    if (curr_min < 10)
-                        curr_min = "0" + curr_min;
-
-                    var curr_sec = event_start_date.getSeconds();
-                    if (curr_sec < 10)
-                        curr_sec = "0" + curr_sec;
-
-                    var event_start_str = "Starts at "+curr_hour + ":" + curr_min + " on the " + curr_date+"/"+curr_month+"/"+curr_year
-
-                } else {
-                // otherwise format start as date only (without time)
-                    var event_start_str = event_start_date.toString("ddd MMM d");
-                };
-
-                // event location - if not null, surround with parens
-                var event_loc = item.gd$where[0].valueString;
-                if(event_loc!="") {
-	                event_loc = " in " + event_loc;
-	            };
-
-                // Render the event
-                jQuery("#gcal-events li").last().before(
-                    "<strong>" + event_title + "</strong><br />"
-                    +"<em>"+ event_start_str + event_loc+ "</em>"+"<br />"
-                );
-            });
-        });
-    }
-            </script>
-
-        <div class="container">
-          <div align="center">
-            <h5>Below is a list of upcoming events</h5>
-              <div class="mobile-hide">
-              <h5>You can also see the <a class="page-scroll" href="#calendar_popup">full calendar by clicking here</a></h5>
-            </div> <!-- mobile hide the full calendar link -->
-              <ul id="gcal-events">
-                <li>No events listed</li>
-              </ul>
-
-              <script type="text/javascript" charset="utf-8">
-                var calendar_json_url = "https://www.google.com/calendar/feeds/sgsu6qab7n3i7p2b2mthktmupk%40group.calendar.google.com/public/full?orderby=starttime&sortorder=ascending&max-results=10&futureevents=true&alt=json"
-                $(document).ready(GCalEvents(calendar_json_url));
-              </script>
-
-            <p>You can add the MCR calendar to the one on your phone or laptop/computer <a href="https://www.google.com/calendar/ical/sgsu6qab7n3i7p2b2mthktmupk%40group.calendar.google.com/private-b21f51a9b829033ea96a23f5a099031f/basic.ics">by clicking here</a></p>
-            <p><em>(A pop up will open on your device asking if you want to subscribe. This subscription works on Mac and PC)</em>.</p>
-            </div>
-        </div>
-    </section>
-
     <div class="mobile-hide">
-      <!-- WIP : https://developers.google.com/gdata/articles/calvis?csw=1 -->
-<!-- Get java and css-->
-<script src="//gcal.appspot.com/calvis/calvis.js" type="text/javascript"></script>
+      <link href='/MCRsite_test/js/fullcalendar/fullcalendar.css' rel='stylesheet' />
+<link href='/MCRsite_test/js/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+<script src='/MCRsite_test/js/fullcalendar/lib/moment.min.js'></script>
+<script src='/MCRsite_test/js/fullcalendar/lib/jquery.min.js'></script>
+<script src='/MCRsite_test/js/fullcalendar/fullcalendar.min.js'></script>
+<script src='/MCRsite_test/js/fullcalendar/gcal.js'></script>
+<script>
 
-<!-- Shit that runs calendar-->
-<script type="text/javascript">
-window.onload = function() {
-  calvis.ready(main);
-}
+	$(document).ready(function() {
 
-function main() {
-  var calId = 'sgsu6qab7n3i7p2b2mthktmupk@group.calendar.google.com';
+		$('#calendar').fullCalendar({
 
-  var calendar = new calvis.Calendar();
+			// THIS KEY WON'T WORK IN PRODUCTION!!!
+			// To make your own Google API key, follow the directions here:
+			// http://fullcalendar.io/docs/google_calendar/
+			googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
 
-  // set the CSS IDs for various visual components for the calendar container
-  calendar.setCalendarBody('calendarBodyDiv');
-  calendar.setStatusControl('statusControlDiv');
-  calendar.setNavControl('navControlDiv');
-  calendar.setViewControl('viewControlDiv');
-  calendar.setEventCallback('mouseover', displayEvent);
+			// US Holidays
+			events: 'usa__en@holiday.calendar.google.com',
 
-  // set the calenar to pull data from this Google Calendar account
-  calendar.setPublicCalendar(calId);
-  calendar.setLoginControl('loginControlDiv');
+			eventClick: function(event) {
+				// opens events in a popup window
+				window.open(event.url, 'gcalevent', 'width=700,height=600');
+				return false;
+			},
 
-  calendar.setDefaultView('month');
-  // display the calendar
-  calendar.render();
-}
+			loading: function(bool) {
+				$('#loading').toggle(bool);
+			}
 
-function displayEvent(event) {
-  var title = event.getTitle().getText();
-  var date = event.getTimes()[0].getStartTime().getDate();
-  var content = event.getContent().getText();
+		});
 
-  var eventHtml = [];
-  eventHtml.push(date.toString());
-  eventHtml.push('<br><br>');
-  eventHtml.push('<b>Event title:</b> ');
-  eventHtml.push(title);
-  eventHtml.push('<br>');
-  eventHtml.push('<br>');
-  eventHtml.push('<b>Notes (if any):</b>');
-  eventHtml.push('<p style="font-size: 11px;">');
-  eventHtml.push(content);
-  eventHtml.push('</p>');
-  eventHtml.push('<br>');
+	});
 
-  document.getElementById('eventDisplayDiv').innerHTML = eventHtml.join('');
-}
 </script>
-<!-- Calendar Section -->
-    <section id="calendar_popup">
-        <div class="container">
-          <div align="center">
-              <table style="width: 800px;">
-                <tr>
-                  <td colspan="2" valign="top">
-                    <div style="float: left;" id="loginControlDiv"></div>
-                    <div style="float: right;" id="statusControlDiv"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td valign="top">
-                    <div id="navControlDiv"></div>
-                  </td>
-                  <td valign="top" align="right">
-                    <div id="viewControlDiv"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2" valign="top">
-                    <div id="calendarBodyDiv"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="2" valign="top">
-                    <div id="eventDisplayDiv"></div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-        </div>
-    </section>
+<style>
+
+	body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+
+	#loading {
+		display: none;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+	#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+</style>
+</head>
+<body>
+
+	<div id='loading'>loading...</div>
+
+	<div id='calendar'></div>
+
+</body>
 
     </div> <!-- mobile hide -->
     <!-- Freshers Section -->
